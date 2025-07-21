@@ -2,31 +2,31 @@ export const menulists = [
   {
     id: 1,
     path: "/",
-    link: "home",
+    title: "home",
   },
   {
     id: 2,
     path: "/shop",
-    link: "Shop",
+    title: "Shop",
   },
   {
     id: 3,
     path: "/blog",
-    link: "Blog",
+    title: "Blog",
   },
   {
     id: 4,
     path: "/about",
-    link: "about",
+    title: "about",
   },
   {
     id: 5,
     path: "/services",
-    link: "Services",
+    title: "Services",
   },
   {
     id: 6,
     path: "/contact",
-    link: "Contact",
+    title: "Contact",
   },
 ];

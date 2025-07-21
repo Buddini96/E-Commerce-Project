@@ -1,10 +1,12 @@
 import React from 'react'
 import logoImg from '../assets/common/logo.png'
 import { menulists } from '../assets/data/data';
-import { CustomLink } from './CustomComponents';
 import {} from "react-icons/io"
 import { IoSearchOutline } from "react-icons/io5";
 import { IoCartOutline } from "react-icons/io5";
+import {} from "react-icons/io";
+import { NavLink } from 'react-router-dom';
+
 // <div className="lg-:h-[88px] lg:absolute lg:top-0 lg:right-0 lg-w-1/3 lg:-z-10"></div>
 
 function Navbar() {
@@ -18,7 +20,16 @@ function Navbar() {
           <div className="hidden lg:flex items-center justify-between gap-8">
             {menulists.map((list) => (
               <li key={list.id} className="uppercase list-none">
-                <a href={list.link}></a>
+                <NavLink
+                  to={list.link}
+                  className={({ isActive }) =>
+                    `text-[15px] font-medium text-gray-600 font-sans ${
+                      isActive ? "text-primary-green" : ""
+                    }`
+                  }
+                >
+                  {list.title}
+                </NavLink>
               </li>
             ))}
           </div>
@@ -26,9 +37,9 @@ function Navbar() {
 
         <div className="flex items-center gap-8 icons">
           <div className="uppercase hidden lg:block text-inherit relative z-20">
-            <CustomLink>Login</CustomLink>
-            <span className="">/</span>
-            <CustomLink>Register</CustomLink>
+            <a href="/login">Login</a>
+            <span>/</span>
+            <a href="/register">Register</a>
           </div>
           <div className="icon flex items-center justify-center gap-6">
             <IoSearchOutline size={23} />
